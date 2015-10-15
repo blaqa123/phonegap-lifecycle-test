@@ -2,6 +2,11 @@ var paused_count =0;
 var resumed_count = 0;
 var launched_count = 0;
 
+var batterylow_Check= 0;
+var Charging_Check = 0;
+var fullBattery_Check = 100;
+
+
     function onLoad() {
         document.addEventListener("deviceready", onDeviceReady, false);
 		console.log("device ready");
@@ -11,6 +16,15 @@ var launched_count = 0;
 		$("#launched").text("Application launched: " + launched_count);
 		$("#resumed").text("Application paused: " + paused_count);
 		$("#paused").text("Application resumed: " + resumed_count);
+		$("#batterylow").text("Warning!! Battery Low:" + batterylow_Check);
+		$("#charging").text("charging:" + Charging_Check);
+		$("#fullbattery").text("fully charged:" + fullBattery_Check);
+		
+	}
+	function batteryStatus(){
+		$("#batterylow").text("Warning!! Battery Low:" + batterylow_Check);
+		$("#charging").text("charging:" + Charging_Check);
+		$("#fullbattery").text("fully charged:" + fullBattery_Check);
 	}
 
 
